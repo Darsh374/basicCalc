@@ -8,13 +8,23 @@ class MyTestCase(unittest.TestCase):
 
     def test_MathOperations_Addition(self):
         calculator = Calculator()
-        result = calcualtor.Sum(1, 2)
+        calculator.Sum(1, 2)
         self.assertEqual(3, Addition.sum(1, 2))
 
-    def test_calculator_subtraction(self):
+    def test_calculator_return_difference(self):
         calculator = Calculator()
-        result = calcualtor.(1, 2)
-        self.assertEqual(-1, Subtraction.difference(1, 2))
+        calculator.Difference(1, 2)
+        self.assertEqual(-1, result)
+
+    def test_calculator_access_difference_result(self):
+        calculator = Calculator()
+        calculator.Difference(1, 2)
+        self.assertEqual(-1, calculator.Result)
+
+    def test_calculator_access_sum_result(self):
+        calculator = Calcualtor()
+        calculator.Sum(1, 2)
+        self.assertEqual(3, calculator.Result)
 
     def test_calculator_multiply(self):
         calculator = Calculator()
