@@ -1,40 +1,38 @@
 import unittest
 
-from MathOperations.addition import Addition
-from MathOperations.subtraction import Subtraction
+from Calculator.Calculator import Calculator
 
 
 class MyTestCase(unittest.TestCase):
 
-    def test_MathOperations_Addition(self):
-        calculator = Calculator()
-        calculator.Sum(1, 2)
-        self.assertEqual(3, Addition.sum(1, 2))
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_instantiate_calculator(self):
+        self.assertIsInstance(self.calculator, Calculator)
+
+    def test_calculator_return_sum(self):
+        result = self.calculator.Sum(1, 2)
+        self.assertEqual(3, result)
 
     def test_calculator_return_difference(self):
-        calculator = Calculator()
-        calculator.Difference(1, 2)
+
+        result = self.calculator.Difference(1, 2)
         self.assertEqual(-1, result)
 
     def test_calculator_access_difference_result(self):
-        calculator = Calculator()
-        calculator.Difference(1, 2)
-        self.assertEqual(-1, calculator.Result)
+        self.calculator.Difference(1, 2)
+        self.assertEqual(-1, self.calculator.Result)
 
     def test_calculator_access_sum_result(self):
-        calculator = Calcualtor()
-        calculator.Sum(1, 2)
-        self.assertEqual(3, calculator.Result)
+        self.calculator.Sum(1, 2)
+        self.assertEqual(3, self.calculator.Result)
 
-    def test_calculator_multiply(self):
-        calculator = Calculator()
-        result = calculator.multiply(1, 2)
-        self.assertEqual(2, result)
-
-    def test_calculator_divide(self):
-        calculator = Calculator()
-        result = calculator.divide(6, 3)
-        self.assertEqual(2, result)
+    def test_multiple_calculators(self):
+        calculator1 = Calculator()
+        calculator2 = Calculator()
+        self.calculator.Sum(calculator1.Sum(1, 2), calculator2.Difference(3, 4))
+        self.assertEqual(2, self.calculator.Result)
 
 
 if __name__ == '__main__':
