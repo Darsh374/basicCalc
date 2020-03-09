@@ -2,6 +2,8 @@ import unittest
 
 from MathOperations.addition import Addition
 from MathOperations.subtraction import Subtraction
+from MathOperations.multiplication import Multiplication
+from MathOperations.division import Division
 
 
 class MyTestCase(unittest.TestCase):
@@ -18,6 +20,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_MathOperations_multiplication(self):
         self.assertEqual(6, Multiplication.product(2, 3))
+
+    def test_MathOperations_division(self):
+        self.assertEqual(2, Division.quotient(4, 2))
+
 
 if __name__ == '__main__':
     unittest.main()
