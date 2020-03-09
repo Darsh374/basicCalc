@@ -16,6 +16,8 @@ class MyTestCase(unittest.TestCase):
         valuelist = [1, 2, 3]
         self.assertEqual(6, Addition.sum(valuelist))
 
+    def test_MathOperations_multiplication(self):
+        self.assertEqual(6, Multiplication.product(2, 3))
 
 if __name__ == '__main__':
     unittest.main()
