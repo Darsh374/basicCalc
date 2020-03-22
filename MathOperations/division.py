@@ -1,4 +1,4 @@
-class Division
+class Division:
 
     @staticmethod
     def quotient(dividend, divisor):
