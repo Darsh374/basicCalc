@@ -1,9 +1,8 @@
 language: python
 python:
-  - "3.8"
-# command to run tests
+  - "3.7"
 script:
-  - python -m  unittest discover -s  Tests
+  - python -m unittest discover -s Tests
 
 branches:
   only:
